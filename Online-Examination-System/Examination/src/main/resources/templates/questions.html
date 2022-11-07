@@ -1,0 +1,33 @@
+<html xmlns:th="https://www.thyleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Examination</title>
+</head>
+<body>
+	<h1>Examination</h1>
+	<!-- <table border ="1">
+	<tr th:each="q : ${questions}">
+		<th th:text="${q.question_detail}"/>
+			<table border ="1">
+			<tr  th:each="a: ${q.answers}">
+			<th th:text="${a.answer_detail}"/>
+			</tr>
+			</table>
+	</tr>
+	</table> -->
+	
+	<ol type="1">
+		<span th:each="q : ${questions}">
+			<li th:text="${q.question_detail}" /> 		
+				<span th:each="a: ${q.answers}">
+					<div>
+					<input type="radio" value="${a.id}">
+					<label th:text="${a.answer_detail}"/>
+					</div>
+		  	   </span>
+		</span>
+	</ol>
+
+
+</body>
+</html>
